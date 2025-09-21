@@ -102,7 +102,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    background: url('/gradient-bg.svg') center top/cover no-repeat fixed;
+    background: hsl(var(--background)), url('/gradient-bg.svg') center top/cover no-repeat fixed;
     min-height: 100vh;
   }
 }
