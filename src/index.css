@@ -102,26 +102,8 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    background: url('/bg-gradient.png') center/cover no-repeat fixed, hsl(var(--background));
-  }
-
-  /* Lovable Gradient Background */
-  .lovable-gradient-bg {
-    background: url('/gradient-bg.svg') center top/cover no-repeat;
-    background-attachment: fixed;
-    position: relative;
-  }
-  
-  .lovable-gradient-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 50%;
-    background: url('/gradient-bg.svg') center top/cover no-repeat;
-    opacity: 0.5;
-    z-index: -1;
+    background: url('/gradient-bg.svg') center top/cover no-repeat fixed;
+    min-height: 100vh;
   }
 }
 
