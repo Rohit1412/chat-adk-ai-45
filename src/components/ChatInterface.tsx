@@ -158,7 +158,7 @@ export const ChatInterface = ({
       description: "Final responses exported as markdown."
     });
   };
-  return <div className="h-screen bg-background flex flex-col relative overflow-hidden">
+  return <div className="h-screen lovable-gradient-bg flex flex-col relative overflow-hidden">
       {/* Header */}
       <Card className="glass-strong rounded-none border-x-0 border-t-0 border-b border-white/10 shadow-glass z-10">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 py-4">
