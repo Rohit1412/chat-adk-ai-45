@@ -18,7 +18,7 @@ export interface CreateSessionResponse {
 
 class SessionService {
   private readonly SESSION_STORAGE_KEY = 'ai_chat_session';
-  private readonly BASE_URL = 'https://574a2aa1ee07.ngrok-free.app';
+  private readonly BASE_URL = 'http://localhost:8000';
   private readonly APP_NAME = 'startup_investor_agent';
 
   async createSession(initialState: Record<string, unknown> = {}): Promise<Session> {

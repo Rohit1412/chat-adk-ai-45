@@ -1,73 +1,73 @@
-# Welcome to your Lovable project
+# InsightSprout — AI Chat Assistant
 
-## Project info
+Interactive AI chat application with streaming responses, file uploads, and a clean React UI.
 
-**URL**: https://lovable.dev/projects/c254d7c5-ca85-413a-8bb2-731b80dfced3
+## Features
 
-## How can I edit this code?
+- Streaming chat with SSE-based updates
+- Upload and analyze many file types (PDF, images, Office docs, code, audio)
+- Session setup and persistence in browser storage
+- Modern, responsive UI with shadcn-ui + Tailwind CSS
+- TypeScript-first, Vite-powered development
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- Vite, React 18, TypeScript
+- Tailwind CSS, shadcn-ui, Radix Primitives
+- React Router, TanStack Query
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c254d7c5-ca85-413a-8bb2-731b80dfced3) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+Prerequisites:
+- Node.js 18+ and npm
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Install and run:
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build and preview production bundle:
+```bash
+npm run build
+npm run preview
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Configuration
 
-**Use GitHub Codespaces**
+Backend endpoint:
+- The chat API base URL is defined in `src/services/chatService.ts:16` as `BASE_URL`.
+- Update it to point to your backend (e.g., your ADK/agent server) and ensure CORS is allowed.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+File support:
+- The app validates and sends many common types. See `src/services/chatService.ts` for the full list and size limits.
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+- `src/App.tsx` — application shell and routing
+- `src/pages/` — views like `AgentInfo`, `Index`, `NotFound`
+- `src/components/` — chat UI, inputs, and shared UI components
+- `src/services/` — chat and session services
+- `public/` — static assets (favicon, placeholder image)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Scripts
 
-## How can I deploy this project?
+- `npm run dev` — start dev server
+- `npm run build` — build for production
+- `npm run preview` — preview built app
+- `npm run lint` — run ESLint
 
-Simply open [Lovable](https://lovable.dev/projects/c254d7c5-ca85-413a-8bb2-731b80dfced3) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+This is a static frontend app. Deploy the `dist/` folder to any static host (Vercel, Netlify, Cloudflare Pages, S3, etc.). Ensure:
+- `BASE_URL` points to a reachable backend over HTTPS
+- Your backend allows CORS from your deployed origin
 
-Yes, you can!
+## Notes
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Update `index.html` meta tags (title/description/images) to match your branding. A generic `/placeholder.svg` image is provided.
+- If you change ports or hosting, review `vite.config.ts` dev server settings.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## License
+
+Proprietary or as defined by the repository owner.

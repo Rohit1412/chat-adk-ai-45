@@ -47,7 +47,7 @@ export interface StreamResponse {
 }
 
 class ChatService {
-  private readonly BASE_URL = 'https://574a2aa1ee07.ngrok-free.app';
+  private readonly BASE_URL = 'http://localhost:8000';
 
   async sendMessage(
     session: Session,
@@ -101,7 +101,6 @@ class ChatService {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'text/event-stream',
-          'ngrok-skip-browser-warning': 'true',
         },
         body: JSON.stringify(requestPayload),
       });
