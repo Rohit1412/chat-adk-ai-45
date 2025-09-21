@@ -91,7 +91,7 @@ class ChatService {
           role: 'user',
           parts,
         },
-        streaming: true,
+        streaming: false,
         stateDelta: {},
       };
 
