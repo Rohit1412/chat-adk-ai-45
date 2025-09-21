@@ -72,7 +72,7 @@ export const SessionSetup = ({
         {/* Main Card */}
         <Card className="border-0 shadow-2xl bg-card/90 backdrop-blur-sm hover-scale">
           
-          <CardContent className="space-y-8 px-8 pb-8">
+          <CardContent className="space-y-8 px-8 pb-8 glass border border-white/10">
             {/* Features Grid */}
             <div className="space-y-6 mx-0 my-px py-[6px]">
               {features.map((feature, index) => {
