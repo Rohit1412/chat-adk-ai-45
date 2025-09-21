@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Loader2, User, Bot, Settings, CheckCircle, Clock } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { RotatingText } from './RotatingText';
 
 interface MessageBubbleProps {
   message: ParsedMessage;
@@ -59,13 +60,17 @@ export const MessageBubble = ({ message, className }: MessageBubbleProps) => {
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               <Loader2 className="w-4 h-4 animate-spin text-primary" />
-              <span className="text-sm opacity-80">
-                {message.content.some(c => c.type === 'function_call' && 
-                  !message.content.some(r => r.type === 'function_response' && 
-                    r.functionResponse?.id === c.functionCall?.id)) 
-                  ? 'Processing function call...' 
-                  : 'Thinking...'}
-              </span>
+              <RotatingText 
+                messages={
+                  message.content.some(c => c.type === 'function_call' && 
+                    !message.content.some(r => r.type === 'function_response' && 
+                      r.functionResponse?.id === c.functionCall?.id)) 
+                    ? ['Processing function call...', 'Executing request...', 'Handling parameters...', 'Running operation...']
+                    : ['Thinking...', 'Analyzing...', 'Planning next steps...', 'Browsing data...', 'Diving deeper...', 'Processing insights...', 'Connecting dots...', 'Formulating response...']
+                }
+                className="text-sm"
+                interval={1800}
+              />
             </div>
           </div>
         )}
