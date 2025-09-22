@@ -18,7 +18,7 @@ export interface CreateSessionResponse {
 
 class SessionService {
   private readonly SESSION_STORAGE_KEY = 'ai_chat_session';
-  private readonly BASE_URL = 'http://localhost:8000';
+  private readonly BASE_URL = 'http://34.47.226.66:8080';
   private readonly APP_NAME = 'startup_investor_agent';
 
   async createSession(initialState: Record<string, unknown> = {}): Promise<Session> {
@@ -31,7 +31,6 @@ class SessionService {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': 'true',
         },
         body: JSON.stringify({
           initial_state: initialState,
@@ -96,7 +95,6 @@ class SessionService {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': 'true',
         },
       });
       

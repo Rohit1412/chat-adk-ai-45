@@ -47,7 +47,7 @@ export interface StreamResponse {
 }
 
 class ChatService {
-  private readonly BASE_URL = 'http://localhost:8000';
+  private readonly BASE_URL = 'http://34.47.226.66:8080';
 
   async sendMessage(
     session: Session,
